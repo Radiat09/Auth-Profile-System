@@ -107,3 +107,5 @@ uploads/
 *.swp
 *.swo
 *~
+.vercel
+dist
