@@ -399,13 +399,19 @@ export const resendOTP = async (req: Request, res: Response): Promise<void> => {
         user.otpExpires = otpExpires;
         await user.save();
 
-        const emailSent = await sendOTPEmail(email, otp);
+        await sendEmail({
+          to: email,
+          subject: "Your OTP Code",
+          templateName: "otp",
+          templateData: {
+            name: "",
+            otp: otp,
+          },
+        });
 
         res.status(200).json({
           success: true,
-          message: emailSent
-            ? "OTP resent to your email"
-            : "OTP regenerated successfully",
+          message: "OTP resent to your email",
           otp: process.env.NODE_ENV === "development" ? otp : undefined,
         });
         return;
