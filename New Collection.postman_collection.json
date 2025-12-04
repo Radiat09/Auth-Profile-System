@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "7470f94b-95d3-43d2-85f6-21581775e8bb",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37079554"
+	},
+	"item": [
+		{
+			"name": "Register with phone",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\": \"+8801716014325\",\r\n    \"name\": \"John Doe\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{auth_local}}/register/phone"
+			},
+			"response": []
+		},
+		{
+			"name": "Verify Phone",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MzFhMjlhNDk2MThhNzcyNDIzMTNmZCIsImlhdCI6MTc2NDg2MDU3MSwiZXhwIjoxNzY1NDY1MzcxfQ.FGj7ARsKKIamg1-NjvNyzNrw5mr0g4Y1i3MLCAsiK4c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\": \"+8801716014325\",\r\n    \"otp\": \"344999\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{auth_local}}/verify/phone"
+			},
+			"response": []
+		},
+		{
+			"name": "Register with eamil",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ridoyme10@gmail.com\",\r\n    \"password\": \"password123\",\r\n    \"name\": \"John Doe\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{auth_local}}/register/email"
+			},
+			"response": []
+		},
+		{
+			"name": "Verify email",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MzFhODJhYTg4MTRiNDAyZDY2NzBkOCIsImlhdCI6MTc2NDg2MTk5NywiZXhwIjoxNzY1NDY2Nzk3fQ.UTGx1D8Pc44-TouoDWwE9BSfOlyr6RU1pFhmsDvo1Y0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ridoyme10@gmail.com\",\r\n    \"otp\": \"388109\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{auth_local}}/verify/email"
+			},
+			"response": []
+		},
+		{
+			"name": "Email Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ridoyme10@gmail.com\",\r\n    \"password\": \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{auth_local}}/login/email"
+			},
+			"response": []
+		},
+		{
+			"name": "Phone Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\": \"+8801716014325\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{auth_local}}/login/phone"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Profile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MzFhODJhYTg4MTRiNDAyZDY2NzBkOCIsImlhdCI6MTc2NDg2MjEwOCwiZXhwIjoxNzY1NDY2OTA4fQ.dEeUca3BmEEdarpYEyqBc7WfMK_3ezngTSbNWw33k_0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/v1/profile"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Profile",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MzFhODJhYTg4MTRiNDAyZDY2NzBkOCIsImlhdCI6MTc2NDg2MjEwOCwiZXhwIjoxNzY1NDY2OTA4fQ.dEeUca3BmEEdarpYEyqBc7WfMK_3ezngTSbNWw33k_0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"New Name\",\r\n    \"bio\": \"New bio\",\r\n    \"location\": \"New Location\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/v1/profile"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Profile Picture",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MzFhODJhYTg4MTRiNDAyZDY2NzBkOCIsImlhdCI6MTc2NDg2MjEwOCwiZXhwIjoxNzY1NDY2OTA4fQ.dEeUca3BmEEdarpYEyqBc7WfMK_3ezngTSbNWw33k_0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "profilePicture",
+							"type": "file",
+							"src": "/O:/Photos/Ai/Gemini_Generated_Image_xetvkcxetvkcxetv COMPRESSED.png"
+						}
+					]
+				},
+				"url": "http://localhost:3000/api/v1/profile/upload-picture"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Profile Picture Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MzFhODJhYTg4MTRiNDAyZDY2NzBkOCIsImlhdCI6MTc2NDg2MjEwOCwiZXhwIjoxNzY1NDY2OTA4fQ.dEeUca3BmEEdarpYEyqBc7WfMK_3ezngTSbNWw33k_0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "profilePicture",
+							"type": "file",
+							"src": "/O:/Photos/Ai/Gemini_Generated_Image_xetvkcxetvkcxetv COMPRESSED.png"
+						}
+					]
+				},
+				"url": "http://localhost:3000/api/v1/profile/picture"
+			},
+			"response": []
+		}
+	]
+}
